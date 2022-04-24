@@ -19,7 +19,6 @@ public class ShipMovement : MonoBehaviour
     {
        RotationMove();
        VerticalMove();
-       Debug.Log(rb.velocity.y);
     }
 
     void VerticalMove()
@@ -32,10 +31,13 @@ public class ShipMovement : MonoBehaviour
     {
         dirRotation.z = Input.GetAxisRaw("Horizontal");
         dirRotation.x = Input.GetAxisRaw("Vertical");
-        deltaRotation= Quaternion.Euler(dirRotation* rotationSpeed * Time.fixedDeltaTime);
         
-        rb.MoveRotation(rb.rotation * deltaRotation);
+        //rotacion por quaterniones
+        //deltaRotation= Quaternion.Euler(dirRotation* rotationSpeed * Time.fixedDeltaTime);
+        //rb.MoveRotation(rb.rotation * deltaRotation);
         
+        rb.AddTorque(dirRotation* rotationSpeed * Time.fixedDeltaTime);
+       
         //rb.rotation=Quaternion.Euler(Mathf.Clamp(rb.rotation.eulerAngles.x,min,max), rb.rotation.eulerAngles.y, rb.rotation.eulerAngles.z);
         
         
