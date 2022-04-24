@@ -216,6 +216,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &754896977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 105123433565404415, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+  m_PrefabInstance: {fileID: 1389765717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +232,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -299,6 +305,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a451db53527995449930ff2c23464501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 754896977}
+  offSet: {x: 0, y: 0, z: -15}
 --- !u!1001 &1389765717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,6 +326,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3293026690565148209, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: max
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -3293026690565148209, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: min
+      value: -60
+      objectReference: {fileID: 0}
     - target: {fileID: -3293026690565148209, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: rotationSpeed
       value: 40
@@ -368,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8577924792379151873, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
