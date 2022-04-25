@@ -5,16 +5,16 @@ public class DestroyShip : MonoBehaviour
 {
     private void OnEnable()
     {
-        LandingShip.OnShipDestroy += Destroy;
+        LandShip.OnShipDestroy += Destroy;
     }
 
     private void OnDisable()
     {
-        LandingShip.OnShipDestroy-=Destroy;
+        LandShip.OnShipDestroy-=Destroy;
     }
 
     private void Destroy()
     {
-        Debug.Log("estas muerto");
+       // Debug.Log("estas muerto");
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-public class ShipMovement : MonoBehaviour
+public class MoveShip : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField] private float verticalSpeed;
