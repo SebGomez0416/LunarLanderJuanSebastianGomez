@@ -4,6 +4,8 @@ using UnityEngine;
 public class LandingShip : MonoBehaviour
 {
     private Rigidbody rb;
+    [SerializeField] private float vel_Min;
+    [SerializeField] private float vel_Max;
     public delegate void ShipDestroy();
     public static ShipDestroy OnShipDestroy;
     private void Awake()
@@ -21,7 +23,6 @@ public class LandingShip : MonoBehaviour
     {
         if (c.CompareTag("Lander"))
         {
-            Debug.Log(rb.velocity.y);
             Landing();
         }
         else OnShipDestroy?.Invoke(); 
@@ -29,7 +30,7 @@ public class LandingShip : MonoBehaviour
 
     private void Landing()
     {
-        if (rb.velocity.y <= 2 && rb.velocity.y >=-2 )
+        if (rb.velocity.y <= vel_Max && rb.velocity.y >= vel_Min )
         {
             //exitoso  sumar puntaje /cargar gasolina 
             Debug.Log("exitoso");
