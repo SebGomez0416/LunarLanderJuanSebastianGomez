@@ -343,18 +343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 20247459367040511, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20247459367040511, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
-      propertyPath: lengthInSec
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 20247459367040511, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 105123433565404403, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -369,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 105123433565404415, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.98
+      value: 7.91
       objectReference: {fileID: 0}
     - target: {fileID: 105123433565404415, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -402,6 +390,14 @@ PrefabInstance:
     - target: {fileID: 105123433565404415, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 657618257489988311, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446663388092203659, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}

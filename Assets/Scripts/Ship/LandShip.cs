@@ -14,7 +14,7 @@ public class LandShip : MonoBehaviour
     public static ShipDestroy OnShipDestroy;
     public delegate void LandingEffects(bool isActive);
     public static LandingEffects OnLandingEffects;
-    [SerializeField]private bool islanding;
+    private bool islanding;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

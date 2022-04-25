@@ -15,6 +15,6 @@ public class DestroyShip : MonoBehaviour
 
     private void Destroy()
     {
-       // Debug.Log("estas muerto");
+       gameObject.SetActive(false);
     }
 }
