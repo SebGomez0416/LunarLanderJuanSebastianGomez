@@ -57,7 +57,6 @@ public class LandShip : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, distance, collider))
         {
-            
             if (islanding) return;
                 islanding = true;
                 OnLandingEffects?.Invoke(true);
@@ -67,7 +66,6 @@ public class LandShip : MonoBehaviour
             if (!islanding) return;
                 islanding = false;
                 OnLandingEffects?.Invoke(false);
-
         }
     }
 }

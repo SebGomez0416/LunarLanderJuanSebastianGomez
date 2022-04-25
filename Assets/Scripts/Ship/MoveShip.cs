@@ -2,6 +2,7 @@ using UnityEngine;
 public class MoveShip : MonoBehaviour
 {
     private Rigidbody rb;
+    private ParticleSystem fire;
     [SerializeField] private float verticalSpeed;
     [SerializeField]private float rotationSpeed;
     private Quaternion deltaRotation;
@@ -13,6 +14,7 @@ public class MoveShip : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        fire = GetComponentInChildren<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -23,8 +25,9 @@ public class MoveShip : MonoBehaviour
 
     void VerticalMove()
     {
-        if (Input.GetKey(KeyCode.Space))
-            rb.AddForce(gameObject.transform.up * verticalSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
+        if (!Input.GetKey(KeyCode.Space)) return;
+        rb.AddForce(gameObject.transform.up * verticalSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
+        fire.Play();
     }
 
     void RotationMove()

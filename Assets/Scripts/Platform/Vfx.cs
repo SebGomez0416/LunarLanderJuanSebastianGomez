@@ -22,12 +22,8 @@ public class Vfx : MonoBehaviour
 
    private void Smoke(bool isActive)
    {
-      
-      Debug.Log("particvulas");
       if (isActive)
-      {
          smoke.Play();
-      }
       else
       {
         // smoke.Stop(); // revisar 
