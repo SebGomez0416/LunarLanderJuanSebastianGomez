@@ -4,8 +4,7 @@ using UnityEngine;
 public class LandShip : MonoBehaviour
 {
     [SerializeField]private float distance;
-    [SerializeField] private LayerMask collider;
-    
+    [SerializeField] private LayerMask collider;    
     private Rigidbody rb;
     [SerializeField] private float vel_Min;
     [SerializeField] private float vel_Max;
@@ -28,7 +27,9 @@ public class LandShip : MonoBehaviour
     private void OnCollisionEnter(Collision c)
     {
         if (c.collider.CompareTag("Ground"))
-            OnShipDestroy?.Invoke(); 
+            OnShipDestroy?.Invoke();      
+        
+
     }
 
     private void OnTriggerEnter(Collider c)

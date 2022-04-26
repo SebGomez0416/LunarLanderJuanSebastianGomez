@@ -24,12 +24,9 @@ public class Vfx : MonoBehaviour
    {
       if (isActive)
          smoke.Play();
-      else
-      {
-        // smoke.Stop(); // revisar 
-         smoke.Clear();
-         smoke.Pause(); 
-      }
+      else      
+         smoke.Stop();    
+      
      
       
 
