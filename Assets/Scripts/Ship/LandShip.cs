@@ -14,9 +14,11 @@ public class LandShip : MonoBehaviour
     public delegate void CrashShip();
     public static CrashShip OnCrashShip;
     private bool islanding;
+    private Vector3 initPos;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        initPos=rb.position;
     }
 
     private void Update()
@@ -27,7 +29,7 @@ public class LandShip : MonoBehaviour
     private void OnCollisionEnter(Collision c)
     {
         if (c.collider.CompareTag("Ground"))
-           OnCrashShip?.Invoke();      
+           Crash();   
 
     }
 
@@ -37,7 +39,7 @@ public class LandShip : MonoBehaviour
         {
             Landing();
         }
-        else  OnCrashShip?.Invoke(); 
+        else  Crash(); 
     }
 
     private void Landing()
@@ -47,7 +49,7 @@ public class LandShip : MonoBehaviour
             //exitoso  sumar puntaje /cargar gasolina 
            // Debug.Log("exitoso");
         }
-        else OnCrashShip?.Invoke(); 
+        else Crash(); 
 
         OnLandingEffects?.Invoke(false);
     }
@@ -67,5 +69,14 @@ public class LandShip : MonoBehaviour
                 islanding = false;
                 OnLandingEffects?.Invoke(false);
         }
+    }
+
+    private void Crash()
+    {
+        rb.isKinematic=true;
+        OnCrashShip?.Invoke();
+        rb.position=initPos;
+        rb.rotation=Quaternion.Euler(Vector3.zero);
+        rb.isKinematic=false;
     }
 }
