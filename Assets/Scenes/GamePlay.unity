@@ -343,6 +343,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3293026690565148209, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: limitRotation
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -3293026690565148209, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 105123433565404403, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -395,9 +403,17 @@ PrefabInstance:
       propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 657618257489988311, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5446663388092203659, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577924792379151873, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}

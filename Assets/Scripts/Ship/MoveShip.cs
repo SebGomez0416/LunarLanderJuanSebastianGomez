@@ -7,9 +7,8 @@ public class MoveShip : MonoBehaviour
     [SerializeField]private float rotationSpeed;
     private Quaternion deltaRotation;
     private Vector3 dirRotation;
-
-    [SerializeField] private float max;
-    [SerializeField] private float min;
+    [SerializeField] private float limitRotation;
+    
     
     private void Awake()
     {
@@ -40,12 +39,9 @@ public class MoveShip : MonoBehaviour
         //rb.MoveRotation(rb.rotation * deltaRotation);
         
         rb.AddTorque(dirRotation* rotationSpeed * Time.fixedDeltaTime);
-       
-        //rb.rotation=Quaternion.Euler(Mathf.Clamp(rb.rotation.eulerAngles.x,min,max), rb.rotation.eulerAngles.y, rb.rotation.eulerAngles.z);
         
-        
-        /*rb.rotation= Quaternion.Euler(Mathf.Clamp(rb.rotation.eulerAngles.x,min,max),
-            rb.rotation.eulerAngles.y,Mathf.Clamp(rb.rotation.eulerAngles.z,min,max));*/
+        if(Vector3.Angle(Vector3.up,transform.up)>= limitRotation)
+            rb.angularVelocity = Vector3.zero;         
 
     }
 
