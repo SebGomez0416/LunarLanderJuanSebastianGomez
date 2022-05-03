@@ -20,6 +20,7 @@ public class MoveShip : MonoBehaviour
     {
        RotationMove();
        VerticalMove();
+      
     }
 
     void VerticalMove()

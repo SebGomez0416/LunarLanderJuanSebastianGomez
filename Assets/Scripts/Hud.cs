@@ -12,12 +12,6 @@ public class Hud : MonoBehaviour
    public delegate void ShipDestroy();
    public static ShipDestroy OnShipDestroy;
    private int life=3;
-
-
-    void Awake()
-    {
-        //gameOver.enabled=false;
-    }
    
    private void OnEnable()
    {
@@ -36,6 +30,7 @@ public class Hud : MonoBehaviour
             case 0:
                 life_One.enabled=false;
                 OnShipDestroy?.Invoke();
+                
                 GameOver();
                 break;
             case 1:
@@ -49,8 +44,8 @@ public class Hud : MonoBehaviour
    }
 
    private void GameOver()
-   {
-       gameOver.enabled=true;
+   {        
+        gameOver.gameObject.SetActive(true);
    }
     
 }

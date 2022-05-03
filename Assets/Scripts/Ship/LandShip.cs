@@ -5,8 +5,7 @@ public class LandShip : MonoBehaviour
 {
     [SerializeField]private float distance;
     [SerializeField] private LayerMask collider;    
-    private Rigidbody rb;
-    [SerializeField] private float vel_Min;
+    private Rigidbody rb;    
     [SerializeField] private float vel_Max;    
    
     public delegate void LandingEffects(bool isActive);
@@ -28,26 +27,22 @@ public class LandShip : MonoBehaviour
 
     private void OnCollisionEnter(Collision c)
     {
+        Debug.Log(c.relativeVelocity.magnitude);
         if (c.collider.CompareTag("Ground"))
-           Crash();   
+           Crash();
+        if (c.collider.CompareTag("Lander"))        
+            Landing(c);
+        else Crash();
 
     }
 
-    private void OnTriggerEnter(Collider c)
+    
+    private void Landing(Collision c)
     {
-        if (c.CompareTag("Lander"))
-        {
-            Landing();
-        }
-        else  Crash(); 
-    }
-
-    private void Landing()
-    {
-        if (rb.velocity.y <= vel_Max && rb.velocity.y >= vel_Min )
+        if (c.relativeVelocity.magnitude <= vel_Max)
         {
             //exitoso  sumar puntaje /cargar gasolina 
-           // Debug.Log("exitoso");
+            Debug.Log("exitoso");
         }
         else Crash(); 
 
