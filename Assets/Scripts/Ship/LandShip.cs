@@ -27,7 +27,7 @@ public class LandShip : MonoBehaviour
 
     private void OnCollisionEnter(Collision c)
     {
-        Debug.Log(c.relativeVelocity.magnitude);
+        
         if (c.collider.CompareTag("Ground"))
            Crash();
         if (c.collider.CompareTag("Lander"))        
