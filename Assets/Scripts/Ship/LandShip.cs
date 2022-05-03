@@ -10,8 +10,13 @@ public class LandShip : MonoBehaviour
    
     public delegate void LandingEffects(bool isActive);
     public static LandingEffects OnLandingEffects;
+
     public delegate void CrashShip();
     public static CrashShip OnCrashShip;
+
+    public delegate void ReFuel();
+    public static ReFuel OnReFuel;
+
     private bool islanding;
     private Vector3 initPos;
     private void Awake()
@@ -26,14 +31,12 @@ public class LandShip : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision c)
-    {
-        
+    {       
         if (c.collider.CompareTag("Ground"))
            Crash();
         if (c.collider.CompareTag("Lander"))        
             Landing(c);
         else Crash();
-
     }
 
     
@@ -41,8 +44,7 @@ public class LandShip : MonoBehaviour
     {
         if (c.relativeVelocity.magnitude <= vel_Max)
         {
-            //exitoso  sumar puntaje /cargar gasolina 
-            Debug.Log("exitoso");
+            OnReFuel?.Invoke();
         }
         else Crash(); 
 

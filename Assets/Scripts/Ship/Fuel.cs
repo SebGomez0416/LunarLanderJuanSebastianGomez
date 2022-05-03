@@ -1,39 +1,42 @@
-
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour
 {
     [SerializeField]private int fuel;
-
+    [SerializeField] private int reFuel;
     public delegate void OutFuel(bool f);
     public static OutFuel OnOutFuel;
+    private Slider fuelBar;
+
+    private void Awake()
+    {
+        fuelBar = GetComponent<Slider>();        
+    }
 
     private void OnEnable()
     {
-        MoveShip.OnUseFuel += test;
+        MoveShip.OnUseFuel += UseFuel;
+        LandShip.OnReFuel += Reload;
+            
     }
     private void OnDisable()
     {
-        MoveShip.OnUseFuel -= test; 
+        MoveShip.OnUseFuel -= UseFuel;
+        LandShip.OnReFuel -= Reload;
     }
 
-    private void test()
+    public void UseFuel()
     {
-        Debug.Log("entro");
-        fuel--;
-        if(fuel == 0)
-        {
-            OnOutFuel?.Invoke(true);
-        }       
+        fuel++;
+        fuelBar.value=fuel;
+        if (fuel == fuelBar.maxValue)        
+            OnOutFuel?.Invoke(true);               
     }
-
-    public void SetFuel(int f)
-    {
-        fuel = f;
-    }
-
-    public int GetFuel()
-    {
-         return fuel;
-    }
+    public void Reload()
+    {        
+        fuel -= reFuel;
+        if (fuel <= 0)        
+            fuel = 0;        
+    }    
 }

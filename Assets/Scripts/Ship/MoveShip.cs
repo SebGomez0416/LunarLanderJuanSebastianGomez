@@ -30,8 +30,7 @@ public class MoveShip : MonoBehaviour
     private void FixedUpdate()
     {
        RotationMove();
-       VerticalMove();
-      
+       VerticalMove();      
     }
 
     private void VerticalMove()
