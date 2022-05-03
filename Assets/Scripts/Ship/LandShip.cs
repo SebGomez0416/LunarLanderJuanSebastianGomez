@@ -6,8 +6,10 @@ public class LandShip : MonoBehaviour
     [SerializeField]private float distance;
     [SerializeField] private LayerMask collider;    
     private Rigidbody rb;    
-    [SerializeField] private float vel_Max;    
-   
+    [SerializeField] private float vel_Max;
+
+    [SerializeField] private int score;
+
     public delegate void LandingEffects(bool isActive);
     public static LandingEffects OnLandingEffects;
 
@@ -16,6 +18,9 @@ public class LandShip : MonoBehaviour
 
     public delegate void ReFuel();
     public static ReFuel OnReFuel;
+
+    public delegate void AddScore(int score);
+    public static AddScore OnAddScore;
 
     private bool islanding;
     private Vector3 initPos;
@@ -45,8 +50,9 @@ public class LandShip : MonoBehaviour
         if (c.relativeVelocity.magnitude <= vel_Max)
         {
             OnReFuel?.Invoke();
-        }
-        else Crash(); 
+            OnAddScore?.Invoke(score);
+        }       
+        else Crash();
 
         OnLandingEffects?.Invoke(false);
     }

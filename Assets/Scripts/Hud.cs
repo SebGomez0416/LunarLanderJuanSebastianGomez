@@ -9,20 +9,29 @@ public class Hud : MonoBehaviour
    [SerializeField] private RawImage life_Two;
    [SerializeField] private RawImage life_Three;
    [SerializeField] private Text gameOver;
-   [SerializeField] private Text Score;
+   [SerializeField] private Text scoreText;
+   private int score;
 
    public delegate void ShipDestroy();
    public static ShipDestroy OnShipDestroy;
    private int life=3;   
 
-    private void OnEnable()
+   private void OnEnable()
    {
        LandShip.OnCrashShip+=Life;
+       LandShip.OnAddScore += Score;
    }      
    private void OnDisable()
    {
        LandShip.OnCrashShip-=Life;
+        LandShip.OnAddScore -= Score;
    }
+
+    private void Score(int sc)
+    {
+        score+=sc;
+        scoreText.text ="Score:"+ score;
+    }
 
    private void Life()
    {

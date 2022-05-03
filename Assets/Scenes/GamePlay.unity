@@ -852,6 +852,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2294492231125342466, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
+      propertyPath: score
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -2294492231125342466, guid: aaa8faeb72369b246879544d845a2a2b, type: 3}
       propertyPath: vel_Max
       value: 3
       objectReference: {fileID: 0}
@@ -1126,7 +1130,7 @@ MonoBehaviour:
   life_Two: {fileID: 1091779549}
   life_Three: {fileID: 1855665542}
   gameOver: {fileID: 181632858}
-  Score: {fileID: 0}
+  scoreText: {fileID: 290149718}
 --- !u!1 &1561170604
 GameObject:
   m_ObjectHideFlags: 0
