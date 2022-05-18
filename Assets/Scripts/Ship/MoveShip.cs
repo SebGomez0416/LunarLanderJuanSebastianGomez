@@ -52,12 +52,9 @@ public class MoveShip : MonoBehaviour
         if(Vector3.Angle(Vector3.up,transform.up)>= limitRotation)
             rb.angularVelocity = Vector3.zero;
     }
-
     private void OutFuel(bool fuel)
     {
         outFull = fuel;
     }
-
-
 
 }
