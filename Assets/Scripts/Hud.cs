@@ -9,8 +9,10 @@ public class Hud : MonoBehaviour
    [SerializeField] private RawImage life_Two;
    [SerializeField] private RawImage life_Three;
    [SerializeField] private Text gameOver;
+   [SerializeField] private Text Win;
    [SerializeField] private Text scoreText;
    private int score;
+   [SerializeField]private int scoreToWin;
 
    public delegate void ShipDestroy();
    public static ShipDestroy OnShipDestroy;
@@ -31,6 +33,8 @@ public class Hud : MonoBehaviour
     {
         score+=sc;
         scoreText.text ="Score:"+ score;
+        if (score != scoreToWin) return;
+        GameOver();
     }
 
    private void Life()
@@ -55,6 +59,9 @@ public class Hud : MonoBehaviour
    private void GameOver()
    {        
         gameOver.gameObject.SetActive(true);
+        if (score != scoreToWin) return;
+        Win.gameObject.SetActive(true);
+        
    }
     
 }
