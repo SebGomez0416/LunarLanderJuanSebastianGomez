@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hud : MonoBehaviour
 {
@@ -62,6 +61,11 @@ public class Hud : MonoBehaviour
         if (score != scoreToWin) return;
         Win.gameObject.SetActive(true);
         
+   }
+   
+   public void ChangeScene(string scene)
+   {
+       SceneManager.LoadScene(scene);
    }
     
 }
